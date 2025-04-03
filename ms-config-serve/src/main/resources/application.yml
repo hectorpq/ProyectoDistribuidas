@@ -9,7 +9,7 @@ spring:
     config:
       server:
         git:
-          uri: git@github.com:hectorpq/ProyectoDistribuidas.git # ruta del repositorio git
+          uri: https://github.com/hectorpq/DAD-proyect # ruta del repositorio git
           searchPaths: config-data
           default-label: main
 
