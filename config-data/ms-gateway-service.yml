@@ -23,7 +23,7 @@ spring:
           predicates:
             - Path=/categoria/**
 
-        - id: s-pedido-service
+        - id: ms-pedido-service
           uri: lb://ms-pedidos-service
           predicates:
             - Path=/pedido/**
