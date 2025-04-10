@@ -35,7 +35,7 @@ public class PedidoSeeder implements CommandLineRunner {
             pedidoRepository.save(pedido4);
             pedidoRepository.save(pedido5);
 
-            System.out.println("✅ Datos de pedidos insertados correctamente.");
+            System.out.println("Datos de pedidos insertados correctamente.");
         } else {
             System.out.println("Los pedidos ya existen, no se insertaron datos.");
         }
