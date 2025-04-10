@@ -1,19 +1,30 @@
 package com.example.mspagosservice.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.Data;
+import java.time.LocalDateTime;
 
 @Entity
 public class Pagos {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private Double monto;
-    private String metodo;
-    private String estado;
+    private String metodoPago;
+    private String estado; // Puede ser "pendiente", "completado", "fallido"
+    private LocalDateTime fecha;
+
+    public Pagos() {
+        this.fecha = LocalDateTime.now();
+    }
+
+    public Pagos(Integer id, Double monto, String metodoPago, String estado, LocalDateTime fecha) {
+        this.id = id;
+        this.monto = monto;
+        this.metodoPago = metodoPago;
+        this.estado = estado;
+        this.fecha = fecha;
+    }
 
     public Integer getId() {
         return id;
@@ -31,12 +42,12 @@ public class Pagos {
         this.monto = monto;
     }
 
-    public String getMetodo() {
-        return metodo;
+    public String getMetodoPago() {
+        return metodoPago;
     }
 
-    public void setMetodo(String metodo) {
-        this.metodo = metodo;
+    public void setMetodoPago(String metodoPago) {
+        this.metodoPago = metodoPago;
     }
 
     public String getEstado() {
@@ -47,22 +58,22 @@ public class Pagos {
         this.estado = estado;
     }
 
-    public Pagos(Integer id, Double monto, String metodo, String estado) {
-        this.id = id;
-        this.monto = monto;
-        this.metodo = metodo;
-        this.estado = estado;
+    public LocalDateTime getFecha() {
+        return fecha;
     }
 
-    public Pagos() {}
+    public void setFecha(LocalDateTime fecha) {
+        this.fecha = fecha;
+    }
 
     @Override
     public String toString() {
         return "Pagos{" +
                 "id=" + id +
                 ", monto=" + monto +
-                ", metodo='" + metodo + '\'' +
+                ", metodoPago='" + metodoPago + '\'' +
                 ", estado='" + estado + '\'' +
+                ", fecha=" + fecha +
                 '}';
     }
 }

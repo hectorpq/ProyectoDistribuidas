@@ -1,6 +1,7 @@
 package com.example.mspagosservice.controller;
 
 import com.example.mspagosservice.entity.Pagos;
+import com.example.mspagosservice.repository.PagosRepository;
 import com.example.mspagosservice.service.PagosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -9,9 +10,8 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/pagos")
+@RequestMapping("pagos")
 public class PagosController {
-
     @Autowired
     private PagosService pagosService;
 
@@ -27,6 +27,7 @@ public class PagosController {
 
     @PostMapping
     public Pagos guardar(@RequestBody Pagos pagos) {
+        System.out.println(pagos);
         return pagosService.guardar(pagos);
     }
 
