@@ -28,3 +28,8 @@ spring:
           predicates:
             - Path=/pedido/**
 
+        - id: ms-pagos-service
+          uri: lb://ms-pagos-service
+          predicates:
+            - Path=/pagos/**
+
