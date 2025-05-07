@@ -1,7 +1,18 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> ba25d55be993052f0e325501025914843f307e62
 spring:
   application:
     name: ms-catalogo-service
   profiles:
     active: development
   config:
+<<<<<<< HEAD
     import: optional:configserver:http://root:123456@localhost:7070
+=======
+    import: optional:configserver:http://root:123456@localhost:7070
+
+
+
+>>>>>>> ba25d55be993052f0e325501025914843f307e62

@@ -1,5 +1,10 @@
 server:
+<<<<<<< HEAD
   port: 8086
+=======
+  port: 8085
+
+>>>>>>> ba25d55be993052f0e325501025914843f307e62
 
 eureka:
   client:
@@ -14,22 +19,45 @@ spring:
     gateway:
       discovery:
         locator:
+<<<<<<< HEAD
           enable: true
       routes:
         - id: ms-ventas-service
           uri: lb://ms-ventas-service
           predicates:
             - Path=/ventas/**
+=======
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: ms-catalogo-service
+          uri: lb://ms-catalogo-service
+          predicates:
+            - Path=/categoria/**
+
+        - id: ms-pedido-service
+          uri: lb://ms-pedido-service
+          predicates:
+            - Path=/pedido/**
+
+>>>>>>> ba25d55be993052f0e325501025914843f307e62
         - id: ms-pagos-service
           uri: lb://ms-pagos-service
           predicates:
             - Path=/pagos/**
+<<<<<<< HEAD
+=======
+
+>>>>>>> ba25d55be993052f0e325501025914843f307e62
         - id: ms-clientes-service
           uri: lb://ms-clientes-service
           predicates:
             - Path=/clientes/**
+<<<<<<< HEAD
         - id: ms-pedidos-service
           uri: lb://ms-pedidos-service
           predicates:
             - Path=/pedidos/**
+=======
+>>>>>>> ba25d55be993052f0e325501025914843f307e62
 

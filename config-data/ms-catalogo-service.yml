@@ -1,6 +1,7 @@
 server:
   port: 8081
 spring:
+<<<<<<< HEAD
   datasource:
     url: jdbc:h2:mem:ms_catalogo
     driverClassName: org.h2.Driver
@@ -13,6 +14,22 @@ spring:
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
       ddl-auto: update
+=======
+  application:
+    name: ms-catalogo-service
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/ms_catalogo
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+>>>>>>> ba25d55be993052f0e325501025914843f307e62
 springdoc:
   api-docs:
     enabled: true
@@ -21,8 +38,22 @@ springdoc:
     path: /doc/swagger-ui.html
 
 eureka:
+<<<<<<< HEAD
       client:
         serviceUrl:
           defaultZone: http://localhost:8090/eureka
       instance:
         hostname: localhost
+=======
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8090/eureka
+  instance:
+    hostname: localhost
+
+
+
+
+
+
+>>>>>>> ba25d55be993052f0e325501025914843f307e62
